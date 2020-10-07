@@ -1,0 +1,75 @@
+<html>
+<head>
+  <base href="/">
+  <title>Watson Assistant Chat App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta property="og:image" content="conversation.svg" />
+  <meta property="og:title" content="Conversation Chat Simple" />
+  <meta property="og:description" content="Sample application that shows how to use the Watson Assistant API to identify user intents" />
+  <link rel="shortcut icon" href="favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/app.css">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <!-- <div id="view-change-button" class="button" onclick="PayloadPanel.togglePanel(event, this)">
+    <img class="option full" src="../img/Chat Button.png">
+    <img class="option not-full" src="../img/Code Button.png">
+  </div> -->
+  <div id="contentParent" class="responsive-columns-wrapper">
+    <div id="chat-column-holder" class="responsive-column content-column">
+      <header><img style="max-width: 90px" src="https://pngimage.net/wp-content/uploads/2018/05/chatbot-png-2.png"></img> Chatbot IA</header>
+      <div class="chat-column">
+        <div id="scrollingChat"></div>
+        <p class="user-typing" id="user-typing-field"></p>
+        <!-- <label for="textInput" class="inputOutline">
+          <input id="textInput" class="input responsive-column" placeholder="Ingrese su pregunta" type="text" onkeydown="ConversationPanel.inputKeyDown(event, this)"
+            autofocus>
+        </label> -->
+        <div class="input-group mb-3">
+          <input type="text" id="ipt-question" autoComplete="off" class="form-control" placeholder='Escriba su pregunta' aria-label="Recipient's username" aria-describedby="basic-addon2" onkeydown="ConversationPanel.inputKeyDown(event, this)">
+          <div class="input-group-append">
+            <button style="width:'100%'; height:'38px'" class="btn btn-info" type="button" onclick="ConversationPanel.botonEnviar()"><i class="material-icons">send</i></button>
+          </div>
+        </div>
+        
+        <!-- <div class="disclaimer">
+          * This system is for demonstration purposes only and is not intended to process Personal Data. No Personal
+          Data is to be entered
+          into this system as it may not have the necessary controls in place to meet the requirements of the General
+          Data Protection
+          Regulation (EU) 2016/679.
+        </div> -->
+        <!-- <div class="disclaimer">
+          By using this application, you agree to the&nbsp;
+          <a target="_blank" rel="noreferrer noopener" href="https://watson-developer-cloud.github.io/terms?name=Watson%20Assistant%20Demo">
+            Terms of Use
+          </a>
+        </div> -->
+      </div>
+    </div>
+    <div id="payload-column" style="display: none;" class="fixed-column content-column">
+      <div id="payload-initial-message">
+        Type something to see the output
+      </div>
+      <div id="payload-request" class="payload"></div>
+      <div id="payload-response" class="payload"></div>
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/conversation.js"></script>
+  <script src="js/payload.js"></script>
+  <script src="js/global.js"></script>
+  <script type="text/javascript" src="https://cdn.rawgit.com/watson-developer-cloud/watson-developer-cloud.github.io/master/analytics.js"></script>
+</body>
+</html>
